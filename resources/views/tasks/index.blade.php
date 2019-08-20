@@ -21,11 +21,13 @@
                 </tr>
                 @endforeach
             </tbody>
-            
-            <div class="text-right mb-4">
-                {!! link_to_route('tasks.create', 'タスク新規作成ページ', [], ['class' => 'btn btn btn-primary']) !!}
-            </div>
-            
+        </table>
+        
+        <div class="mb-3">    
+            {!! link_to_route('tasks.create', 'タスク新規作成ページ', [], ['class' => 'btn btn btn-primary']) !!}
+        </div>
+        {{ $tasks->links('pagination::bootstrap-4') }}
+        
     @else
         <div class="center jumbotron">
             <div class="text-center">
